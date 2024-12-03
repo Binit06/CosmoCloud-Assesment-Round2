@@ -70,7 +70,7 @@ This is a FastAPI application that uses MongoDB as the database and is deployed 
 ### 5. Update the data of a speceific student
 
 - **Endpoint:** `/students/{id}`
-- **Method:** `PUT`
+- **Method:** `PATCH`
 - **Request Body:**
     ```json
     {

@@ -56,7 +56,7 @@ async def delete_student_data(id: PydanticObjectId):
     }
 
 
-@router.put("/{id}")
+@router.patch("/{id}")
 async def update_student(id: PydanticObjectId, req: UpdateStudentModel = Body(...)):
     updated_student = await update_student_data(id, req.dict())
     if updated_student:
