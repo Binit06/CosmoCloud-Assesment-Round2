@@ -2,7 +2,7 @@ from typing import Optional
 from beanie import init_beanie
 from motor.motor_asyncio import AsyncIOMotorClient
 from pydantic_settings import BaseSettings
-from models import Movie, Comment, User, Theater  # Import the models explicitly
+from models import Movie
 
 class Settings(BaseSettings):
     DATABASE_URL: Optional[str] = None

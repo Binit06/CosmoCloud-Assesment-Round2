@@ -4,82 +4,79 @@ This is a FastAPI application that uses MongoDB as the database and is deployed 
 
 ## API Endpoints
 
-### 1. Add a New Student
+### 1. Get The Movie Title and Comments
 
-- **Endpoint:** `/students/`
-- **Method:** `POST`
-- **Request Body:**
-    ```json
-    {
-        "name": "string",
-        "age": "int",
-        "address": {
-            "city" : "string",
-            "country" : "string"
-        }
-    }
-    ```
-- **Response:**
-    ```json
-    {
-        "id": "string"
-    }
-    ```
-
-### 2. Get all Students
-
-- **Endpoint:** `/students/`
+- **Endpoint:** `/movies/{id}`
 - **Method:** `GET`
 - **Response:**
     ```json
     {
-        "data" : [
+        "title": "string",
+        "comments": [
             {
                 "name" : "string",
-                "age" : "int"
+                "email" : "string",
+                "text" : "string",
+                "date" : "string"
             }
         ]
     }
     ```
 
-### 3. Get a student by ID
+### 2. Get movie title and the number of comments
 
-- **Endpoint:** `/students/{id}`
+- **Endpoint:** `/movies/count/{id}`
 - **Method:** `GET`
 - **Response:**
     ```json
     {
-        "name": "string",
-        "age": "int",
-        "address" : {
-            "city" : "string",
-            "country" : "string",
-        }
+        "title" : "string",
+        "commentCount" : "integer"
     }
     ```
 
-### 4. Delete a speceific student
+### 3. Get IMDB Count along with total number of comments and movie title
 
-- **Endpoint:** `/students/{id}`
-- **Method:** `DELETE`
+- **Endpoint:** `/movies/count/imdb/{id}`
+- **Method:** `GET`
 - **Response:**
     ```json
-    {}
+    {
+        "title" : "string",
+        "imdbRating" : "double",
+        "commentCount" : "integer"
+    }
     ```
 
-### 5. Update the data of a speceific student
+### 4. List all unique cast members
 
-- **Endpoint:** `/students/{id}`
-- **Method:** `PATCH`
+- **Endpoint:** `/movies/cast/show`
+- **Method:** `GET`
+- **Response:**
+    ```json
+    {
+        "castMember" : "string",
+        "movieCount" : "integer"
+    }
+    ```
+
+### 5. List all movies released before 1950 with an IMDB rating of 7.0 or higher
+
+- **Endpoint:** `/movies/special/show`
+- **Method:** `GET`
 - **Request Body:**
     ```json
     {
-        "name": "string",
-        "age": "int",
-        "address": {
-            "city" : "string",
-            "country" : "string"
-        }
+        "title" : "string",
+        "releaseYear" : "integer",
+        "genres" : ["string"],
+        "imdbRating" : "double",
+        "comments" : [
+            {
+                "name" : "string",
+                "text" : "string"
+            }
+        ]
     }
     ```
 - **Response:**

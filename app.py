@@ -3,7 +3,7 @@ from fastapi.concurrency import asynccontextmanager
 
 from config.config import initiate_database
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
-from routes.routes import router as StudentRouter
+from routes.routes import router as MainRouter
 
 async def start_database():
     await initiate_database()
@@ -22,4 +22,4 @@ app = FastAPI(lifespan=lifespan)
 async def read_root():
     return {"message": "Welcome to this app. This is speceifically made for intern assessment purpose."} 
 
-app.include_router(StudentRouter,tags=["Students"],prefix="/students")
+app.include_router(MainRouter,tags=["Movies"],prefix="/movies")
