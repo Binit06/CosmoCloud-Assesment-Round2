@@ -1,6 +1,8 @@
 from fastapi import APIRouter, Body, Query
 from fastapi.responses import JSONResponse
 
+from beanie import PydanticObjectId
+
 from database.database import *
 
 
@@ -39,9 +41,8 @@ async def get_students_with_count_imdb(id: PydanticObjectId):
     except Exception as e:
         return {"error": str(e)}
     
-@router.get("/")
+@router.get("/cast/show")
 async def get_cast():
-    print("Entered")
     try:
         movies_with_comments = await get_movies_before_1950_high_rating()
         if not movies_with_comments:
