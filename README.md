@@ -64,7 +64,7 @@ This is a FastAPI application that uses MongoDB as the database and is deployed 
 
 - **Endpoint:** `/movies/special/show`
 - **Method:** `GET`
-- **Request Body:**
+- **Response:**
     ```json
     {
         "title" : "string",
@@ -79,16 +79,12 @@ This is a FastAPI application that uses MongoDB as the database and is deployed 
         ]
     }
     ```
-- **Response:**
-    ```json
-    {}
-    ```
 
 ## Setup and Installation
 
 1. Clone the repository:
      ```sh
-     git clone https://github.com/Binit06/CosmoCloud-Assignment---FastAPI-MongoDB-Python.git
+     git clone https://github.com/Binit06/CosmoCloud-Assesment-Round2.git
      ```
 2. Install the dependencies:
      ```sh
@@ -98,8 +94,3 @@ This is a FastAPI application that uses MongoDB as the database and is deployed 
      ```sh
      uvicorn app:app --host 0.0.0.0 --port 8000
      ```
-
-## Base URL - 
-```
-https://cosmocloud-assignment-fastapi-mongodb.onrender.com/
-```
