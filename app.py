@@ -3,7 +3,7 @@ from fastapi.concurrency import asynccontextmanager
 
 from config.config import initiate_database
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
-from routes.student import router as StudentRouter
+from routes.routes import router as StudentRouter
 
 async def start_database():
     await initiate_database()
